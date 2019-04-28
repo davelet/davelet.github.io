@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 欢迎
+title: 你改变了时间，也受到了时间的报复
 permalink: /
 ---
 
