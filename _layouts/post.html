@@ -10,8 +10,11 @@ layout: default
   </div>
 
   <div class="date">
-    Written on {{ page.date | date: "%B %e, %Y" }}
+    写于{{ page.date | date: "%Y-%b-%e" }}， Written on {{ page.date | date: "%B %e, %Y" }}
   </div>
-
+  <div class="entry">
+    如果你喜欢，请赞赏！
+    <img width="30%" src="/davelet.png" alt="davelet" />
+  </div>
   {% include disqus.html %}
 </article>
