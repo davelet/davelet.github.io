@@ -13,6 +13,6 @@ Hello everyone, My name is Sheldon Wei (Correct, it's that 'Sheldon'!). And I'm 
 
 Here is my email:
 
-[Gmail](sheldon.sh.hb@gmail.com)
+[Gmail](mailto:sheldon.sh.hb@gmail.com)
 
 [QQ 邮箱](mailto:358537858@qq.com)
