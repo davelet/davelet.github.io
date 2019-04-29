@@ -3,8 +3,12 @@ layout: default
 ---
 
 <article class="post">
-  <h1>{{ page.title }}</h1>
+  <h1 style="color:darkcyan;font-size:40px">{{ page.title }}</h1>
 
+  <div class="date">
+      {{ page.date | date: "%Y-%b-%e" }}
+    </div>
+    <hr />
   <div class="entry">
     {{ content }}
   </div>
@@ -12,6 +16,7 @@ layout: default
   <div class="date">
     写于{{ page.date | date: "%Y-%b-%e" }}， Written on {{ page.date | date: "%B %e, %Y" }}
   </div>
+  <hr />
   <div class="entry">
     如果你喜欢，请赞赏！
     <img width="30%" src="/images/post/davelet.png" alt="davelet" />
