@@ -104,7 +104,7 @@ ItEye被搞死以后（被谁搞死大家都知道吧），很快一天我从开
 
 刚到简书的时候很兴奋，从下图红框也可以看出兴奋得晚上睡不好：
 <div align="center">
-<img width="50%" src="/jianshu.png">
+<img width="50%" src="/images/post/jianshu.png">
 </div>
 虽然我最近一段时间比较忙，但是只要有想法，还是会赶紧跑到简书上记下来。
 
