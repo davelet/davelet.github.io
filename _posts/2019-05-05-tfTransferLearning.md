@@ -45,3 +45,6 @@ The core technology is "transfer learning" in images classification. It can redu
 The whole training and converting details are shown in my github repo of [tensorflow_transfer_learning_for_android_on_macos](https://github.com/davelet/tensorflow_transfer_learning_for_android_on_macos).
 
 ——魏晓东 完成于2019-05-06 23:20:03
+
+---
+The page is synchronized to [medium.com](https://medium.com/@sheldon.sh.hb/transfer-learning-%E8%BF%81%E7%A7%BB%E5%AD%A6%E4%B9%A0-in-tensorflow-7e54adc51f93).
