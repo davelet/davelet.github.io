@@ -1,6 +1,8 @@
 ---
 layout: post
 title: 再见了，亲人
+categories: [blog]
+tags: [gitpage]
 ---
 
 我这人有个毛病，喜欢写东西：虽然我文笔一般，思路也不连续。但我就是喜欢分享：把我喜欢的东西强制说给你听。

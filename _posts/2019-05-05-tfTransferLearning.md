@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Transfer Learning (迁移学习) in TensorFlow
+categories: [dev]
+tags: [tensorflow]
 ---
 
 这篇文章我打算分享一下自己学习用TensorFlow进行图片分类的经历。
