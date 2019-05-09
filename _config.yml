@@ -37,11 +37,11 @@ footer-links:
 disqus: manxi
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-google_analytics:
+google_analytics: UA-139863667-1
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
-url:
+url: http://www.manxi.info
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (http://yourusername.github.io/repository-name)
@@ -49,6 +49,13 @@ url:
 # then add in the baseurl here, like this: "/repository-name"
 baseurl: ""
 
+paginate: 4 # 一页放几篇文章
+paginate_path: 'page/:num'
+
+# Search
+search: true
+# Night mode
+nightMode: true
 #
 # !! You don't need to change any of the configuration flags below !!
 #
@@ -73,9 +80,10 @@ sass:
   style: :expanded # You might prefer to minify using :compressed
 
 # Use the following plug-ins
-gems:
+plugins:
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+  - jekyll-paginate
 
 # Exclude these files from your production _site
 exclude:
