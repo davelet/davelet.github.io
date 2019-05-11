@@ -8,6 +8,9 @@ tags: [java, vavr]
 ---
 [前一篇文章](../vavr/)介绍了元组和函数式增强，似乎感觉vavr有点鸡肋。希望这篇文章能稍微改善一点你的看法。
 
+>再次提醒：由于版本间API差异较大，如果代码不能编译请查询官方网站
+>参考：[http://blog.vavr.io/vavr-one-log-01/](http://blog.vavr.io/vavr-one-log-01/)
+
 本文里的类都是线程安全的。
 
 ## Option
@@ -85,95 +88,17 @@ A result = Try.of(this::bunchOfWork)
     ))
     .getOrElse(other);
 ```
-## Lazy
-Lazy是封装延迟计算值的容器。与Supplier不同的是，Lazy是记忆函数，只会计算一次：
-```
-Lazy<Double> lazy = Lazy.of(Math::random);
-lazy.isEvaluated(); // = false
-lazy.get();         // = 0.123 
-lazy.isEvaluated(); // = true
-lazy.get();         // = 0.123
-```
 
 ## Either
-Either represents a value of two possible types. An Either is either a Left or a Right. If the given Either is a Right and projected to a Left, the Left operations have no effect on the Right value. If the given Either is a Left and projected to a Right, the Right operations have no effect on the Left value. If a Left is projected to a Left or a Right is projected to a Right, the operations have an effect.
+Either表示两种可能结果中的一种，要么是Left要么是Right。Left只能作用于Left，Right只能作用于Right；交叉调用没有效果。
 
-Example: A compute() function, which results either in an Integer value (in the case of success) or in an error message of type String (in the case of failure). By convention the success case is Right and the failure is Left.
-
+比如假设compute()方法成功会返回一个整数，失败会返回字符串代码失败原因：
+```
 Either<String,Integer> value = compute().right().map(i -> i * 2).toEither();
-If the result of compute() is Right(1), the value is Right(2).
-If the result of compute() is Left("error"), the value is Left("error").
+```
+如果compute()返回Right(1)，结果就是Right(2)；如果返回Left("error")结果还是Left("error")。
+>一般使用Right表示成功。原因嘛，right...
 
-3.3.5. Future
-A Future is a computation result that becomes available at some point. All operations provided are non-blocking. The underlying ExecutorService is used to execute asynchronous handlers, e.g. via onComplete(…​).
-
-A Future has two states: pending and completed.
-
-Pending: The computation is ongoing. Only a pending future may be completed or cancelled.
-
-Completed: The computation finished successfully with a result, failed with an exception or was cancelled.
-
-Callbacks may be registered on a Future at each point of time. These actions are performed as soon as the Future is completed. An action which is registered on a completed Future is immediately performed. The action may run on a separate Thread, depending on the underlying ExecutorService. Actions which are registered on a cancelled Future are performed with the failed result.
-
-// future *value*, result of an async calculation
-Future<T> future = Future.of(...);
-3.3.6. Validation
-The Validation control is an applicative functor and facilitates accumulating errors. When trying to compose Monads, the combination process will short circuit at the first encountered error. But 'Validation' will continue processing the combining functions, accumulating all errors. This is especially useful when doing validation of multiple fields, say a web form, and you want to know all errors encountered, instead of one at a time.
-
-Example: We get the fields 'name' and 'age' from a web form and want to create either a valid Person instance, or return the list of validation errors.
-
-PersonValidator personValidator = new PersonValidator();
-
-// Valid(Person(John Doe, 30))
-Validation<Seq<String>, Person> valid = personValidator.validatePerson("John Doe", 30);
-
-// Invalid(List(Name contains invalid characters: '!4?', Age must be greater than 0))
-Validation<Seq<String>, Person> invalid = personValidator.validatePerson("John? Doe!4", -1);
-A valid value is contained in a Validation.Valid instance, a list of validation errors is contained in a Validation.Invalid instance.
-
-The following validator is used to combine different validation results to one Validation instance.
-
-class PersonValidator {
-
-    private static final String VALID_NAME_CHARS = "[a-zA-Z ]";
-    private static final int MIN_AGE = 0;
-
-    public Validation<Seq<String>, Person> validatePerson(String name, int age) {
-        return Validation.combine(validateName(name), validateAge(age)).ap(Person::new);
-    }
-
-    private Validation<String, String> validateName(String name) {
-        return CharSeq.of(name).replaceAll(VALID_NAME_CHARS, "").transform(seq -> seq.isEmpty()
-                ? Validation.valid(name)
-                : Validation.invalid("Name contains invalid characters: '"
-                + seq.distinct().sorted() + "'"));
-    }
-
-    private Validation<String, Integer> validateAge(int age) {
-        return age < MIN_AGE
-                ? Validation.invalid("Age must be at least " + MIN_AGE)
-                : Validation.valid(age);
-    }
-
-}
-If the validation succeeds, i.e. the input data is valid, then an instance of Person is created of the given fields name and age.
-
-class Person {
-
-    public final String name;
-    public final int age;
-
-    public Person(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    @Override
-    public String toString() {
-        return "Person(" + name + ", " + age + ")";
-    }
-
-}
 3.4. Collections
 Much effort has been put into designing an all-new collection library for Java which meets the requirements of functional programming, namely immutability.
 
