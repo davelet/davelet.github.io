@@ -17,10 +17,19 @@ html {
   font-size: 100%;
 }
 
+header {
+  background-image: url('{{ site.baseurl }}/images/header-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 body {
 	background: $white;
   font: 18px/1.4 $helvetica;
   color: $darkGray;
+  background-image: url('{{ site.baseurl }}/images/bg.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .container {
