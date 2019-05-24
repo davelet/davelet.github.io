@@ -84,6 +84,7 @@ plugins:
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
   - jekyll-paginate
+  - jekyll-seo-tag # https://help.github.com/en/articles/search-engine-optimization-for-github-pages
 
 # Exclude these files from your production _site
 exclude:
