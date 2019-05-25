@@ -91,7 +91,7 @@ insert into upsert values (1,"a"),(2,"b") on duplicate key update value = values
 > values()函数只能用在这个场景，其他地方不支持
 
 另外，插入单条也可以使用values函数，你可以试试。
-## 和replase的区别
+## 和replace的区别
 
 有人说，这个看起来和replase语法类似啊。
 
@@ -106,4 +106,5 @@ REPLACE into upsert(value) values ("x"),("y"),("z")
 
 上面的x,y,z已经在数据库存在，所以会先删掉，再插入3条新的。新插入的3条id就不再是1,2,3了。
 
---魏晓东 完成与2019年05月25日23:27:54
+---
+-- 魏晓东 完成于2019年05月25日23:27:54
