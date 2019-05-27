@@ -18,9 +18,10 @@ html {
 }
 
 header {
-  background-image: url('{{ site.baseurl }}/images/header-bg.jpg');
+  background-image: url('{{ site.baseurl }}/images/header-bg.png');
   background-repeat: no-repeat;
   background-size: cover;
+  opacity:0.6;
 }
 
 body {
