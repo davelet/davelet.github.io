@@ -72,3 +72,6 @@ Java还提供了一个关键字transitive（和exports一样只是关键字不�
 
 # source code
 完整的项目代码地址：[j11-jigsaw-101](https://github.com/davelet/j11-jigsaw-101)
+
+# 文献
+关于java模块化更加详细的介绍可以阅读《[A Guide to Java 9 Modularity](https://www.baeldung.com/java-9-modularity)》。
