@@ -80,3 +80,5 @@ Java还提供了一个关键字transitive（和exports一样只是关键字不�
 
 # 文献
 关于java模块化更加详细的介绍可以阅读《[A Guide to Java 9 Modularity](https://www.baeldung.com/java-9-modularity)》。
+
+另外有一个短系列博文《[java-9-modules-introduction](https://dzone.com/articles/java-9-modules-introduction-part-1)》可以学习一下。
