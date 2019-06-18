@@ -7,9 +7,9 @@ comments: true
   <h1 style="color:darkcyan;font-size:40px">{{ page.title }}</h1>
 
   <div class="date">
-      {{ page.date | date: "%Y-%m-%d" }}
-    </div>
-    <hr />
+    {{ page.date | date: "%Y-%m-%d" }}
+  </div>
+  <hr />
   <div class="entry">
     {{ content }}
   </div>
@@ -18,6 +18,59 @@ comments: true
     Written on {{ page.date | date: "%B %e, %Y" }}
   </div>
   <hr />
+  <ul class="share-buttons">
+    <li>分享到</li>
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.manxi.info&quote="
+        title="Share on Facebook" target="_blank"
+        onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&quote=' + encodeURIComponent(document.URL)); return false;"><img
+          alt="Share on Facebook" src="/images/flat_web_icon_set/inverted/Facebook.png" /></a></li>
+    <li><a
+        href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fwww.manxi.info&text=:%20http%3A%2F%2Fwww.manxi.info"
+        target="_blank" title="Tweet"
+        onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img
+          alt="Tweet" src="/images/flat_web_icon_set/inverted/Twitter.png" /></a></li>
+    <li><a href="https://plus.google.com/share?url=http%3A%2F%2Fwww.manxi.info" target="_blank" title="Share on Google+"
+        onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.URL)); return false;"><img
+          alt="Share on Google+" src="/images/flat_web_icon_set/inverted/Google+.png" /></a></li>
+    <li><a href="http://www.reddit.com/submit?url=http%3A%2F%2Fwww.manxi.info&title=" target="_blank"
+        title="Submit to Reddit"
+        onclick="window.open('http://www.reddit.com/submit?url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img
+          alt="Submit to Reddit" src="/images/flat_web_icon_set/inverted/Reddit.png" /></a></li>
+    <li><a
+        href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fwww.manxi.info&title=&summary=&source=http%3A%2F%2Fwww.manxi.info"
+        target="_blank" title="Share on LinkedIn"
+        onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img
+          alt="Share on LinkedIn" src="/images/flat_web_icon_set/inverted/LinkedIn.png" /></a></li>
+    <li><a target="_blank" title="Share on Weibo"
+        onclick="window.open('http://v.t.sina.com.cn/share/share.php?url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title) + '&content=utf-8&sourceUrl=' + encodeURIComponent(document.URL) + '&pic=','_blank', 'height=400,width=400,top=100,left=100'); return false;">
+        <img alt="微博" src="/images/flat_web_icon_set/inverted/weibo.png" /></a>
+    </li>
+    <li><a title="Share on Qzone"
+        onclick="window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + encodeURIComponent(document.URL) + '&summary=' +  encodeURIComponent(document.title),'_blank', 'height=400,width=400,top=100,left=100'); return false;">
+        <img alt="Qzone" src="/images/flat_web_icon_set/inverted/qzone.png" /></a>
+    </li>
+  </ul>
+  <style type="text/css">
+    ul.share-buttons {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul.share-buttons li {
+      display: inline;
+    }
+
+    ul.share-buttons .sr-only {
+      position: absolute;
+      clip: rect(1px 1px 1px 1px);
+      clip: rect(1px, 1px, 1px, 1px);
+      padding: 0;
+      border: 0;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+    }
+  </style>
   <div class="entry">
     如果你喜欢，请赞赏！
     <img width="30%" src="/images/post/davelet.png" alt="davelet" />

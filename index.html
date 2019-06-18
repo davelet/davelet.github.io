@@ -2,69 +2,97 @@
 layout: default
 title: 你改变了时间，也受到了时间的报复
 pagination:
-  enabled: true
+enabled: true
 ---
 <span style="font-size: 45px;text-shadow: 5px 5px 5px black, 0px 0px 2px red, 2px 2px 3px green;">{{page.title}}</span>
 <hr />
 {% for post in paginator.posts %}
 <article class="post">
 
-<hr />
-    <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+  <hr />
+  <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
 
-    <div class="entry">
+  <div class="entry">
     {{ post.excerpt }}
-    </div>
+  </div>
 
-    <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">阅读全文</a>
+  <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">阅读全文</a>
 </article>
 {% endfor %}
 
-<hr >
+<hr>
 <!-- Pagination links -->
 <div class="pagination">
   {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous">
-      上一页
-    </a>
+  <a href="{{ paginator.previous_page_path }}" class="previous">
+    上一页
+  </a>
   {% else %}
-    <span class="previous">上一页</span>
+  <span class="previous">上一页</span>
   {% endif %}
   <span class="page_number ">
     {{ paginator.page }} / {{ paginator.total_pages }}
   </span>
   {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="next">下一页</a>
+  <a href="{{ paginator.next_page_path }}" class="next">下一页</a>
   {% else %}
-    <span class="next ">下一页</span>
+  <span class="next ">下一页</span>
   {% endif %}
 </div>
 <ul class="share-buttons">
-  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.manxi.info&quote=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&quote=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="/images/flat_web_icon_set/inverted/Facebook.png" /></a></li>
-  <li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fwww.manxi.info&text=:%20http%3A%2F%2Fwww.manxi.info" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img alt="Tweet" src="/images/flat_web_icon_set/inverted/Twitter.png" /></a></li>
-  <li><a href="https://plus.google.com/share?url=http%3A%2F%2Fwww.manxi.info" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Google+" src="/images/flat_web_icon_set/inverted/Google+.png" /></a></li>
-  <li><a href="http://www.reddit.com/submit?url=http%3A%2F%2Fwww.manxi.info&title=" target="_blank" title="Submit to Reddit" onclick="window.open('http://www.reddit.com/submit?url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Submit to Reddit" src="/images/flat_web_icon_set/inverted/Reddit.png" /></a></li>
-  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fwww.manxi.info&title=&summary=&source=http%3A%2F%2Fwww.manxi.info" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Share on LinkedIn" src="/images/flat_web_icon_set/inverted/LinkedIn.png" /></a></li>
-  <li><a  target="_blank" title="Share on Weibo" onclick="window.open('http://v.t.sina.com.cn/share/share.php?url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title) + '&content=utf-8&sourceUrl=' + encodeURIComponent(document.URL) + '&pic=', 'height=400,width=400,top=100,left=100'); return false;"><img alt="微博" src="images/flat_web_icon_set/inverted/LinkedIn.png" /></a></li>
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.manxi.info&quote="
+      title="Share on Facebook" target="_blank"
+      onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&quote=' + encodeURIComponent(document.URL)); return false;"><img
+        alt="Share on Facebook" src="/images/flat_web_icon_set/inverted/Facebook.png" /></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fwww.manxi.info&text=:%20http%3A%2F%2Fwww.manxi.info"
+      target="_blank" title="Tweet"
+      onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img
+        alt="Tweet" src="/images/flat_web_icon_set/inverted/Twitter.png" /></a></li>
+  <li><a href="https://plus.google.com/share?url=http%3A%2F%2Fwww.manxi.info" target="_blank" title="Share on Google+"
+      onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.URL)); return false;"><img
+        alt="Share on Google+" src="/images/flat_web_icon_set/inverted/Google+.png" /></a></li>
+  <li><a href="http://www.reddit.com/submit?url=http%3A%2F%2Fwww.manxi.info&title=" target="_blank"
+      title="Submit to Reddit"
+      onclick="window.open('http://www.reddit.com/submit?url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img
+        alt="Submit to Reddit" src="/images/flat_web_icon_set/inverted/Reddit.png" /></a></li>
+  <li><a
+      href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fwww.manxi.info&title=&summary=&source=http%3A%2F%2Fwww.manxi.info"
+      target="_blank" title="Share on LinkedIn"
+      onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img
+        alt="Share on LinkedIn" src="/images/flat_web_icon_set/inverted/LinkedIn.png" /></a></li>
+  <li><a target="_blank" title="Share on Weibo"
+      onclick="window.open('http://v.t.sina.com.cn/share/share.php?url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title) + '&content=utf-8&sourceUrl=' + encodeURIComponent(document.URL) + '&pic=', 'height=400,width=400,top=100,left=100'); return false;"><img
+        alt="微博" src="/images/flat_web_icon_set/inverted/LinkedIn.png" /></a></li>
+  <li><a title="Share on Qzone"
+      onclick="window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + encodeURIComponent(document.URL) + '&summary=' +  encodeURIComponent(document.title),'_blank', 'height=400,width=400,top=100,left=100'); return false;">
+      <img alt="Qzone" src="/images/flat_web_icon_set/inverted/LinkedIn.png" /></a>
+  </li>
 </ul>
-<style type="text/css"> 
-ul.share-buttons{
-  list-style: none;
-  padding: 0;
-}
+<style type="text/css">
+  ul.share-buttons {
+    list-style: none;
+    padding: 0;
+  }
 
-ul.share-buttons li{
-  display: inline;
-}
+  ul.share-buttons li {
+    display: inline;
+  }
 
-ul.share-buttons .sr-only{
-  position: absolute;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0;
-  border: 0;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-}
-</style> 
+  ul.share-buttons .sr-only {
+    position: absolute;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+  }
+</style>
+<!-- <script type="text/javascript">
+  thisURL = document.URL;
+  strwrite =
+    "<img src='https://chart.googleapis.com/chart?cht=qr&chs=150x150&choe=UTF-8&chld=L|4&chl="
+    + thisURL + "' width='150' height='150' alt='网址URL' />";
+  document.write(strwrite);  
+</script> -->
