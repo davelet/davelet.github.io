@@ -3,7 +3,7 @@ layout: post
 title: Java中模块的使用
 date: 2019-06-14
 categories: [dev]
-tags: [java]
+tags: [java, jigsaw]
 ---
 Java的模块（就是著名的Jigsaw项目的产物）是Java9中开始出现的。
 这里介绍一下如何通过IntelliJ IDEA 搭建简单的Java模块项目。我使用的jdk版本是11.0.1。

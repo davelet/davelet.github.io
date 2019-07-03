@@ -3,7 +3,7 @@ layout: post
 title: Java中模块的使用(3) 使用命令行一步步体验
 date: 2019-07-01
 categories: [dev]
-tags: [java]
+tags: [java, jigsaw]
 ---
 
 这里我们通过命令行来体验一下如何使用Java的模块。我的机器是Mac，但是其他机器也都一样，只是命令上有稍微的差别。最主要的是要记住使用Java 9+版本。
