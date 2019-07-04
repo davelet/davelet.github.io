@@ -1,12 +1,12 @@
 ---
 layout: post
-title: springboot项目中简单实用akka
+title: springboot项目中简单使用akka
 date: 2019-07-03
 categories: [dev]
 tags: [java, akka, springboot]
 ---
 Spring体系是Java开发中用的最多的框架，目前主要都用springboot。Akka是基于事件驱动的Actor模型，使用Scala开发，但也提供了Java版本的库。
-这里简单演示一个如何在Spring项目中使用Akka。
+这里简单演示一下如何在Spring项目中使用Akka。
 
 # 搭建一个spring mvc项目
 为了使用方便，可以搭建一个spring mvc的项目。这样可以通过swagger或者http客户端调试。
