@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Java中模块的使用(2) 
+title: Java中模块的使用(2) Java模块和maven的集成
 date: 2019-06-17
 categories: [dev]
 tags: [java, jigsaw]
