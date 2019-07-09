@@ -17,6 +17,12 @@ comments: true
   <div class="date">
     Written on {{ page.date | date: "%B %e, %Y" }}
   </div>
+  分类：
+  <a class="tag" href="/category/#{{ page.categories }}">{{page.categories}}</a>，
+  标签：
+  {% for tag in page.tags %}
+    <a class="tag" href="/tags/#{{ tag | slugify }}">{{ tag }}</a>
+  {% endfor %}
   <hr />
   <ul class="share-buttons">
     <li>分享到</li>
