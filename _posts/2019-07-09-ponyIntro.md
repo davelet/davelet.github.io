@@ -13,7 +13,7 @@ Pony语言，或者称为ponylang，是一门小众语言。诞生了有两三�
 真的很安全，不信的话...我拿一篇数学论文证明给你看：[Deny Capabilities for Safe, Fast Actors](https://www.ponylang.io/media/papers/fast-cheap-with-proof.pdf)。
 
 ## 内存安全
-不好有野指针或者内存溢出。Pony也没有null的概念！
+不会有野指针或者内存溢出。Pony也没有null的概念！
 
 ## 异常安全
 这个“异常”是抛异常的那个异常，不是“非常”的意思😸。Pony没有运行时异常，所有的异常都定义了语义，总是会被捕获。
