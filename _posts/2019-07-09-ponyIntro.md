@@ -33,4 +33,6 @@ Pony和C可以互相调用（啥，C还能调用Pony？C认识Pony是谁？没�
 # 结论
 看起来不错吧，不过我还是不用，我用Julia😁
 
-> 对了，Pony是开源的，这是它的库：[https://github.com/ponylang/ponyc](https://github.com/ponylang/ponyc)
+> 作者是Julia官方文档中文本地化翻译小组成员，所以也推荐大家学习Julia哦
+
+对了，Pony是开源的，这是它的库：[https://github.com/ponylang/ponyc](https://github.com/ponylang/ponyc)
