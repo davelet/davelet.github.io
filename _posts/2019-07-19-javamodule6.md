@@ -71,3 +71,8 @@ opens 语句中，可以在包名后面使用to来指定只有哪个模块可以
 requires 进来的模块可以同时在编译期和运行期访问。如果只想在编译器使用，可以在requires 后面增加 static 关键字。比如模块a依赖了模块b但是并不使用b其中的类，另一个模块c依赖了a模块也使用了b模块的类。这样模块a的图中并不包含模块b。
 
 > 只在编译期使用的模块一般有：在IDEA中使用JetBrains的注解，FindBugs的注解，Lombok等。
+
+# 源码
+
+https://github.com/davelet/java9modulegraph
+
