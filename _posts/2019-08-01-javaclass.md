@@ -25,6 +25,7 @@ Java虚拟机规范中说的类结构如下：
 
 # 类型描述符
 只有类和接口会用到内部名，字段类型之类的用到的叫类型描述符。基本类型都用一个字母表示：boolean是Z，char是C，byte是B，short是S，int是I，float是F，long是J，double是D。引用类型的表示是L加上内部名加分号，比如String的描述符是Ljava/lang/String;。数组的描述符是维数个左方括号加上元素类型的内部名，比如int[]是[I，Object[][]是[[Ljava/lang/Object;。
+
 |  类型   | 描述符  | 说明 |
 |  ----  | ----   | ----|
 | boolean  | Z | 布尔
@@ -43,11 +44,12 @@ Java虚拟机规范中说的类结构如下：
 方法描述符是一个字符串，内容是类型描述符的列表，这些类型描述符分别是描述参数和返回值的。方法描述符的组成是一个小括号，里面是参数的类型描述符的直接拼接（不包含任何其他符号），后面跟上返回值的类型描述符，如果没有返回值就跟上大写的V，表示void。方法描述符不包含方法名称或参数名称的信息。
 
 下面是一个方法描述符的例子：
-|  源代码中的方法申明   | 方法描述符  |
-|  ----  | ----   | 
-| void m(int i, float f)  | (IF)V | 
-| int m(Object o)  | (Ljava/lang/Object;)I| 
+
+|  源代码中的方法申明         | 方法描述符  |
+|  :----------------       | :-------  | 
+| void m(int i, float f)    | (IF)V | 
+| int m(Object o)          | (Ljava/lang/Object;)I| 
 | int[] m(int i, String s) | (ILjava/lang/String;)[I | 
-| Object m(int[] i) | ([I)Ljava/lang/Object; | 
+| Object m(int[] i)        | ([I)Ljava/lang/Object; | 
 
 方法描述符很简单，只要你理解了类型描述符是怎么回事。
