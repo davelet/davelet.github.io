@@ -177,7 +177,7 @@ module provider {
 ```
 
 ## 创建应用模块
-应用模块要使用服务，用到了users关键字：
+应用模块要使用服务，用到了uses关键字：
 ```
 module customer {
      requires provider;
