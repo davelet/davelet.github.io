@@ -7,8 +7,8 @@ tags: [java, elasticsearch]
 [前面说过](esgeo/)，Elasticsearch 支持两种地理信息数据结构：geo_point 和 geo_shape。
 geo_point 就是经纬度组成的数字对，geo_shape 支持点、线、曲线、多边形、多边形组。
 
-ES 官方列出了四种地信查询，分别是
- - geo_shape 查询，主要是检索地图上相交、包含、不想交的文档。
+ES 官方列出了四种地信查询过滤器，分别是
+ - geo_shape 查询，主要是检索地图上相交、包含、不相交的文档。
  - geo_bounding-box 检索，检索点落在某矩形中的文档。
  - geo_distance 检索，检索与某点相距特定距离（范围）的点的文档
  - geo_polygon 检索，检索点落在特定多边形内的文档。
