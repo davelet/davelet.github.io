@@ -2,7 +2,7 @@
 layout: post
 title: elasticsearch 地理数据查询API （2）
 categories: [dev]
-tags: [java, elasticsearch]
+tags: [elasticsearch]
 ---
 [上一篇说过](esgeoquery/)，ES 官方给了四种地信查询，分别是
  - geo_shape 查询，主要是检索地图上相交、包含、不相交的文档。

@@ -2,7 +2,7 @@
 layout: post
 title: elasticsearch 地理数据查询API （1）
 categories: [dev]
-tags: [java, elasticsearch]
+tags: [elasticsearch]
 ---
 [前面说过](esgeo/)，Elasticsearch 支持两种地理信息数据结构：geo_point 和 geo_shape。
 geo_point 就是经纬度组成的数字对，geo_shape 支持点、线、曲线、多边形、多边形组。
