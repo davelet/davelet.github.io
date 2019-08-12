@@ -43,9 +43,9 @@ MyFunc.java内容如下：
 package func.math;
 
 public class MyFunc{
-public static void sayHello(){
-System.out.println("Hello Func");
-}
+    public static void sayHello(){
+        System.out.println("Hello Func");
+    }
 }
 ```
 现在返回模块根目录创建模块描述符:
@@ -86,9 +86,9 @@ package main.start;
 import func.math.MyFunc;
 
 public class MyApp{
-public static void main(String[] a) {
-MyFunc.sayHello();
-}
+    public static void main(String[] a) {
+        MyFunc.sayHello();
+    }
 }
 ```
 这个类引用了上个模块的类，并使用了其中的方法。然后返回src/app目录创建模块描述符:
