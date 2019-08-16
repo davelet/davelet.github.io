@@ -39,7 +39,8 @@ rr.addMaxIndexAgeCondition(new TimeValue(10, TimeUnit.DAYS));
 rr.addMaxIndexDocsCondition(1_0000_0000);
 ActionFuture<RolloverResponse> index = transportClient.admin().indices().rolloversIndex(rr);
 ```
-滚动请求必须传入一个写别名，和第一个索引创建的时候是同一个。
+滚动请求必须传入一个写别名，和第一个索引创建的时候是同一个。第二个参数是新的索引名称，不传入的话会自动使用000002、000003这样的后缀。
+
 滚动可以触发的条件有三种，都是`org.elasticsearch.action.admin.indices.rollover.Condition`的子类。
 
 > 滚动条件是深度编写到es源码中的，所以我们没法自己实现自定义条件
@@ -53,10 +54,13 @@ ActionFuture<RolloverResponse> index = transportClient.admin().indices().rollove
 > 示例源码库：[https://github.com/davelet/es-rollover-api-101](https://github.com/davelet/es-rollover-api-101)
 
 ---
-建议：
+### 建议：
 
-> 大量数据的持续上报会极大占用ES资源。
+大量数据的持续上报会极大占用系统资源。
+
 为提升保存速度，建议使用es bulk api进行批量插入，可高性能的单次插入成千上万条文档。
 因此插入es前将记录可以先缓存到redis中，当缓存量足够大时再批量插入es。还可以给对象加时间戳，每次插入对比一下超过一定时间就不再等待数量足够。
+
 redis list没有提供原子性的批量pop功能，需要先range再delete，所以插入到es后要将新的记录写入新的redis list中（可以通过key轮盘实现）。
-这种设计带来的不足是记录有延迟，尤其在低峰期，可能要一直到下一条上报才能把很久前的写入es。
+
+这种设计的不足是记录有延迟，尤其在低峰期，可能要一直到下一条上报才能把很久前的写入es。
