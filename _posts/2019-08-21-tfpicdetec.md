@@ -112,8 +112,10 @@ python开发推荐在虚拟环境venv中进行。
 - input_arrays改成Placeholder
 - output_arrays改成final_result
 
-执行convertor.py很快就生成converted_model.tflite文件。把生成的tflite文件和上面的output_labels.txt文件一起复制到 image_classification/android/app/src/main/assets/ 下面。找到 ClassifierFloatMobileNet.java 文件，复制一份并改名为 ClassifierFloatInception.java。修改其中image size XY 都是299。修改modelPath和LabelPath为上面刚复制过去的文件。修改ClassifierActivity.java 中的classifier变量初始化为new ClassifierFloatInception(this)。
+执行convertor.py很快就生成converted_model.tflite文件。把生成的tflite文件和上面的output_labels.txt文件一起复制到 image_classification/android/app/src/main/assets/下面。
+
+找到 ClassifierFloatMobileNet.java 文件，复制一份并改名为 ClassifierFloatInception.java，修改其中image size XY 都是299，modelPath和LabelPath为上面刚复制过去的文件。
 
 > inception模型的向量大小为299，见[https://github.com/davelet/tensorflow_transfer_learning_for_android_on_macos/blob/master/InceptionV4.pdf](https://github.com/davelet/tensorflow_transfer_learning_for_android_on_macos/blob/master/InceptionV4.pdf)
 
-再次打包安装到手机上可以用手机识别不同花朵的图片试一下。只能识别菊花、蒲公英、向日葵、郁金香、玫瑰。
+最后修改ClassifierActivity.java 中的classifier变量初始化为new ClassifierFloatInception(this)。再次打包安装到手机上可以用手机识别不同花朵的图片试一下。只能识别菊花、蒲公英、向日葵、郁金香、玫瑰。
