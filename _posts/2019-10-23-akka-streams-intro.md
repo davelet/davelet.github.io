@@ -15,7 +15,7 @@ Akka 组件不少，最基础的当然是akka-actor模块。akka-streams模块�
 ```
 private static ActorSystem actorSystem = ActorSystem.create("testActor");
 
-```
+
 
     public static void main(String[] args) {
         AkkaConfiguration configuration = new AkkaConfiguration();
@@ -81,3 +81,5 @@ private static ActorSystem actorSystem = ActorSystem.create("testActor");
                     }
                 });
     }
+
+```
