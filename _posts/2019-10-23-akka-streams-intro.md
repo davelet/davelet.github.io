@@ -39,8 +39,8 @@ private List<Integer> parseLine(String line) {
 
 - Source：源是生成或者说是提供数据流的，是akka streams 处理的入口
 - Flow：流是处理过程，有一个输入和一个输出，是延迟执行的
-- Materializer：副效处理工具，比如在Flow里想记点日志什么的，不用的话就传一个NotUsed
 - Sink：下沉，是Flow的中止操作。和Java类似，akka的流操作也分中间操作和中止操作
+- Materializer：真正执行逻辑的工厂，它会生成一个actor去处理下沉。不用的话就传一个NotUsed
 
 ## 第二步
 通过第一步的方法生成流：
