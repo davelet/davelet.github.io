@@ -131,3 +131,7 @@ public static void main(String[] args) {
 
 # 提示
 Java开发者查看akka的源码有点懵，这样连注释也没法看。Mac上有一个免费的文档软件叫Dash，windows也有类似的软件。可以把akka的文档下载下来查询，方便多了。
+
+# 代码
+
+[https://gist.github.com/davelet/5820db5d6a4048fd1d6f5b20d30d4e22](https://gist.github.com/davelet/5820db5d6a4048fd1d6f5b20d30d4e22)
