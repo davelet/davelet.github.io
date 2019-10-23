@@ -53,5 +53,5 @@ akka系统又两层actor：最顶层是根守卫（root guardian），它由两�
 > ActorRef actor = system.actorOf(..., "myFirstActor")；
 
 <div align="center">
-<img width="80%" src="/images/post/actor-hi.png">
+<img width="80%" src="/images/post/actor_hi.png">
 </div>
