@@ -40,8 +40,14 @@ System.out.println("mget: " + Duration.between(start, Instant.now()));
 
 这段代码多次执行的平均时间在30毫秒左右。也就是比pipeline快了一个量级以上。
 
+---
+
+
 # mset
-在前面的文章我们对比了使用pipeline和不使用的区别，现在我们加入mset看一下：
+在前面的文章我们对比了使用pipeline和不使用的区别，现在我们加入mset看一下。
+
+> 注意：刚才的对比使用的是spring的redisTemplate，接下来我们使用Jedis。同样的操作redisTemplate要比直接使用jedis慢不少,所以它们之间没有对比的意义
+
 ```java
 private static void withMset(Jedis jedis) {
     var start_pipe = Instant.now();
