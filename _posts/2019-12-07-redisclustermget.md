@@ -5,7 +5,7 @@ categories: [dev]
 tags: [redis, java]
 ---
 
-前面《[Redis的pipeline和mget](\redismget)》中说了，redis的批量操作命令对集群都不友好，因为Redis的官方集群方案是把key通过crc16计算hash映射到16384个桶上，落到哪个桶上就落到哪个机器上。网上的《[缓存无底洞问题](http://ifeve.com/redis-multiget-hole)》讲了集中在集群下使用mget的方案：一是拆成多次get，二是根据机器节点顺序查询，三是根据节点并行查询，四是使用hash tag。
+前面《[Redis的pipeline和mget](\redismget)》中说了，redis的批量操作命令对集群都不友好，因为Redis的官方集群方案是把key通过crc16计算hash映射到16384个桶上，落到哪个桶上就落到哪个机器上。网上的《[缓存无底洞问题](http://ifeve.com/redis-multiget-hole)》讲了几种在集群下使用mget的方案：一是拆成多次get，二是根据机器节点顺序查询，三是根据节点并行查询，四是使用hash tag。
 接下来我们用Spring提供的RedisTemplate进行演示。你可以看到，RedisTemplate使用的就是第三种方案。
 
 我本地起来3个节点构成一个集群（详细的搭建过程参考《[Mac 搭建 Redis 集群](https://www.jianshu.com/p/a32542ce4c0b)》），项目指定了地址是：
@@ -13,7 +13,7 @@ tags: [redis, java]
 spring.redis.cluster.nodes=127.0.0.1:17000,127.0.0.1:17001,127.0.0.1:17002
 ```
 
-接下来我们之间使用默认方式插入100条数据并获取：
+接下来我们直接使用默认方式插入100条数据并获取：
 ```java
 var map = new HashMap<String, String>(100, 1);
 for (var i = 1; i <= 100; i++) {
