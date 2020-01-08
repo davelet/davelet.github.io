@@ -465,6 +465,10 @@ public class MybatisCommentGenerator implements CommentGenerator {
             <property name="suppressDate" value="false"/>
             <property name="suppressAllComments" value="false"/>
         </commentGenerator>
+        <jdbcConnection ...>
+            <property name="useInformationSchema" value="true" />
+        </jdbcConnection>
 ```
+> 这里有两处修改。一个是增加了commentGenerator节点，另一个是在jdbcConnection节点内增加了<property name="useInformationSchema" value="true" />
 
 这样生成后的Java类中属性和方法都会增加自定义注释，PO类的属性注释是表字段的注释，类注释是表注释。
