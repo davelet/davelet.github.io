@@ -114,7 +114,7 @@ List<?> list = service.list(qw);
 ```
 这段代码期望查询name在集合list中、并且id是第二次传入的结果。但实际上生成的sql条件是where id = "1209570800020050" and id = "1209570800020051" and name in (@list)，所以一定命不中记录。
 
-# 增改
+## 增改
 增加可以使用
 ```java
 com.baomidou.mybatisplus.extension.service.IService#save
@@ -142,8 +142,37 @@ com.baomidou.mybatisplus.extension.service.IService#saveOrUpdateBatch(java.util.
 ```
 执行区别是判断是否传入ID，有则更新，无则插入。
 
-# 删除
+## 删除
 删除就不说了，现在很少有物理删除功能。如果需要可以查找remove开头的方法，一定能满足你。
+
+## 其他
+mp还提供了很多十分方便的api，比如 QueryWrapper 提供了last方法，可以在生成的sql末尾加自定义语句，如limit 1。再比如分页查询接口page，你可以探索一下用法。
+
+> 注意mp的分页方法必须搭配拦截器，否则无效：
+
+```java
+import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
+import com.baomidou.mybatisplus.extension.plugins.pagination.optimize.JsqlParserCountOptimize;
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+@EnableTransactionManagement
+@Configuration
+@MapperScan("com.baomidou.cloud.service.*.mapper*")
+public class MybatisPlusConfig {
+
+    @Bean
+    public PaginationInterceptor paginationInterceptor() {
+        PaginationInterceptor paginationInterceptor = new PaginationInterceptor();
+        // 开启 count 的 join 优化,只针对部分 left join
+        paginationInterceptor.setCountSqlParser(new JsqlParserCountOptimize(true));
+        return paginationInterceptor;
+    }
+}
+
+```
 
 # 分库组件mycat
 分库分表在国内已经很火爆了，我项目里用的是mycat。
