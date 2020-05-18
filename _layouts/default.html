@@ -17,7 +17,9 @@
 
   <body>
     <div class="wrapper-masthead">
-      <div style="position: fixed; right: 50px; bottom: 150px" id="theme-toggle" onclick="modeSwitcher()">
+      <div style="position: fixed; right: 50px; bottom: 50px" 
+        id="theme-toggle" onclick="modeSwitcher()" 
+        class="darkmode-toggle">
         🌓
       </div>
       <div class="container">
@@ -61,21 +63,15 @@
     let theme = sessionStorage.getItem('theme');
     console.log('thiem', systemInitiatedDark, theme)
 
-    if (systemInitiatedDark.matches) {
-      document.getElementById("theme-toggle").innerHTML = "亮一点";
-    } else {
-      document.getElementById("theme-toggle").innerHTML = "暗一点";
-    }
-
     function prefersColorTest(systemInitiatedDark) {
       if (systemInitiatedDark.matches) {
         document.documentElement.setAttribute('data-theme', 'dark');		
-        document.getElementById("theme-toggle").innerHTML = "亮一点";
+        document.getElementById("theme-toggle").className = 'darkmode-toggle darkmode-toggle--white';
         // this clears the session storage 
         sessionStorage.setItem('theme', '');
       } else {
         document.documentElement.setAttribute('data-theme', 'light');
-        document.getElementById("theme-toggle").innerHTML = "暗一点";
+        document.getElementById("theme-toggle").className = 'darkmode-toggle';
         sessionStorage.setItem('theme', '');
       }
     }
@@ -88,33 +84,33 @@
       if (theme === "dark") {
         document.documentElement.setAttribute('data-theme', 'light');
         sessionStorage.setItem('theme', 'light');
-        document.getElementById("theme-toggle").innerHTML = "暗一点";
+        document.getElementById("theme-toggle").className = 'darkmode-toggle';
         // checks if reader selected light mode 
       }	else if (theme === "light") {
         document.documentElement.setAttribute('data-theme', 'dark');
         sessionStorage.setItem('theme', 'dark');
-        document.getElementById("theme-toggle").innerHTML = "亮一点";
+        document.getElementById("theme-toggle").className = 'darkmode-toggle darkmode-toggle--white';
         // checks if system set dark mode 
       } else if (systemInitiatedDark.matches) {	
         document.documentElement.setAttribute('data-theme', 'light');
         sessionStorage.setItem('theme', 'light');
-        document.getElementById("theme-toggle").innerHTML = "暗一点";
+        document.getElementById("theme-toggle").className = 'darkmode-toggle';
         // the only option left is system set light mode
       } else {
         document.documentElement.setAttribute('data-theme', 'dark');
+        document.getElementById("theme-toggle").className = 'darkmode-toggle darkmode-toggle--white';
         sessionStorage.setItem('theme', 'dark');
-        document.getElementById("theme-toggle").innerHTML = "亮一点";
       }
     }
 
     if (theme === "dark") {
       document.documentElement.setAttribute('data-theme', 'dark');
+      document.getElementById("theme-toggle").className = 'darkmode-toggle darkmode-toggle--white';
       sessionStorage.setItem('theme', 'dark');
-      document.getElementById("theme-toggle").innerHTML = "亮一点";
     } else if (theme === "light") {
       document.documentElement.setAttribute('data-theme', 'light');
+      document.getElementById("theme-toggle").className = 'darkmode-toggle';
       sessionStorage.setItem('theme', 'light');
-      document.getElementById("theme-toggle").innerHTML = "暗一点";
     }
   </script>
 </html>
