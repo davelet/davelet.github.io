@@ -2,7 +2,7 @@
 layout: post
 title: 使用 TensorFlow 进行图片识别的例子（Mac平台下）
 categories: [dev]
-tags: [tensorflow, python]
+tags: [tensorflow, python, ai]
 ---
 这里演示一下如何通过安卓手机识别训练好的花朵。这些花朵都是官方例子里的。我的电脑是Mac，所以下面的方法可能不适用与windows平台。
 
