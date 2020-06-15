@@ -119,3 +119,6 @@ Epoch 1/1.. Train loss: 3.388.. Test loss: 2.234.. Test accuracy: 0.387
     torch.save({'state_dict': model.state_dict()}, './aerialmodel' + time + '.pth')
 ```
 state_dict是模型的参数，也可以把模型图全保存起来，save的第一个参数直接写model就行。
+
+# 代码
+[https://github.com/davelet/pytorch-img-classification/blob/master/main.py](https://github.com/davelet/pytorch-img-classification/blob/master/main.py)
