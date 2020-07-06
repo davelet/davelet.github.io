@@ -2,7 +2,7 @@
 layout: post
 title: 使用pytorch进行图片分类器的训练
 categories: [dev]
-tags: [java]
+tags: [python, pytorch]
 ---
 
 在之前的文章《[通过tensorflow进行图片分类识别训练](/tfpicdetec/)》中我们通过google tensorflow 进行了图片分类的迁移学习。这里我们使用另一个流行的机器学习库pytorch进行训练。
