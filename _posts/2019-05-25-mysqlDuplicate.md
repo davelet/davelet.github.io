@@ -1,7 +1,6 @@
 ---
 layout: post
 title: MySQL 的 “UPSERT”
-# subtitle: '或许是最漂亮的Jekyll主题'
 date: 2019-05-25
 categories: [dev]
 tags: [mysql, database]
@@ -106,5 +105,3 @@ REPLACE into upsert(value) values ("x"),("y"),("z")
 
 上面的x,y,z已经在数据库存在，所以会先删掉，再插入3条新的。新插入的3条id就不再是1,2,3了。
 
----
--- 魏晓东 完成于2019年05月25日23:27:54
