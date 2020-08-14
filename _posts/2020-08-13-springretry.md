@@ -2,7 +2,7 @@
 layout: post
 title: 项目中逻辑执行异常后的重试机制
 categories: [dev]
-tags: [java]
+tags: [java, springboot]
 ---
 
 已经有10来天没有写博客了。不是因为没有东西写——其实想写的东西还挺多的——是因为git pages被墙的原因，“生殖隔离”导致我没有心情来写。
