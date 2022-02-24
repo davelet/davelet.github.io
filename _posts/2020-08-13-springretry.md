@@ -127,6 +127,6 @@ public class Application {
         return "default";
     }
 ```
-这个Recover方法的返回值必须是Retryable方法相同或其子类。另外这个方法可以接收一个异常类型的参数，表示Retryable方法抛出哪种异常可以走哪个降级方法，因为Retryable方法的value值是一个集合。
+这个Recover方法的返回值类型必须是和Retryable方法相同或其子类。另外这个方法可以接收一个异常类型的参数，表示Retryable方法抛出哪种异常可以走哪个降级方法，因此Retryable方法的value值是一个集合。
 如果一个类里面有多个Retryable方法，并且通过上面这个过程能够匹配到多个降级方法，那spring会根据jvm的逻辑寻找“距离最近”的方法，具体过程可以看 RecoverAnnotationRecoveryHandler 这个类。如果多个Retryable方法匹配到同一个Recover方法，它们都会使用这个Recover方法的返回值。
 
