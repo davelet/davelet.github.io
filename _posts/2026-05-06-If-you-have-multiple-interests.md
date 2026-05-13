@@ -1,6 +1,6 @@
 ---
 title: "(转载)如果你有多种兴趣，不要浪费接下来的2-3年"
-categories: [AI, development]
+categories: [AI, blog]
 tags: [notes]
 ---
 
